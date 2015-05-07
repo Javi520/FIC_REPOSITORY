@@ -8,10 +8,11 @@ begin
   if Usuario=NULOU then writeln("+++ERROR DE CANCELACION: RESERVA INEXISTENTE")
   else begin
     butaca:=PrimeraR(listaR);
-    while (i<>cantidad)or(Butaca=NULOU) do begin
     writeln("Cancelacion de ",cliente);
+    while (i<>cantidad)or(Butaca=NULOU) do begin
+          actualizarDatoB(
           eliminarPosicionR(butaca,listaR);
-          writeln("Butaca",i:0,cliente);
+          writeln("Butaca ",i:0," ",cliente);
           butaca:=siguienteR(butaca,listaR);
           i:=i+1;
     end;
