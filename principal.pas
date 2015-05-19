@@ -3,18 +3,23 @@ procedure Cancelacion(cliente:tNombreEspectador;cantidad:integer);
 var i:integer;
 butaca:tPosR;
 Usuario:tPosU;
+Pila:array of tNumeroButaca;
 begin
   Usuario:=BuscarDatoU(cliente,listaU);
   if Usuario=NULOU then writeln("+++ERROR DE CANCELACION: RESERVA INEXISTENTE")
   else begin
     butaca:=PrimeraR(listaR);
-    while (i<>cantidad)or(Butaca=NULOU) do begin
     writeln("Cancelacion de ",cliente);
+    while (i<>cantidad)or(Butaca=NULOU) do begin
+          Pila[i]:=ObtenerDato(butaca,listaU).numeroButaca;
           eliminarPosicionR(butaca,listaR);
           writeln("Butaca",i:0,cliente);
           butaca:=siguienteR(butaca,listaR);
           i:=i+1;
     end;
+    for i to 0 do begin
+        actualizarDatoB(BuscarDatoB(pila[i]),libre);
+      end;
     if butaca=NULOU then begin
     writeln("Eliminando Usuario");
     eliminarPosicionU(Usuario,listaU);
