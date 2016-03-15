@@ -8,7 +8,8 @@
 %%% API %%%%
 
 start() ->
-	spawn(?MODULE, init, [[5,9,2,5,1]]).
+	spawn(?MODULE, init, []).
+	%o eso o % spawn(?MODULE, fun() -> init([])). %quitando el export([init/1]). que es para lo que vale esto
 
 alloc(Servidor, QuienSoy, Value) ->
 	Servidor ! {alloc, QuienSoy, Value}.
